@@ -12,7 +12,7 @@ require_once "includes/config.php";
 
 // Définir des variables et les initialiser avec des valeurs vides
 $title = $description = $event_date = $location = $image = "";
-$is_public = 1; // Valeur par défaut pour l'événement public
+$is_public = 1; // Valeur par défaut pour l'fête public
 $title_err = $description_err = $event_date_err = $location_err = $image_err = "";
 
 // Traitement des données du formulaire lors de la soumission
@@ -32,16 +32,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $description = trim($_POST["description"]);
     }
 
-    // Valider la date de l'événement
+    // Valider la date de l'fête
     if (empty(trim($_POST["event_date"]))) {
-        $event_date_err = "Veuillez entrer une date pour l'événement.";
+        $event_date_err = "Veuillez entrer une date pour l'fête.";
     } else {
         $event_date = trim($_POST["event_date"]);
     }
 
     // Valider le lieu
     if (empty(trim($_POST["location"]))) {
-        $location_err = "Veuillez entrer un lieu pour l'événement.";
+        $location_err = "Veuillez entrer un lieu pour l'fête.";
     } else {
         $location = trim($_POST["location"]);
     }
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Tenter d'exécuter la déclaration préparée
             if ($stmt->execute()) {
-                // Rediriger vers la liste des événements ou une page de confirmation
+                // Rediriger vers la liste des fêtes ou une page de confirmation
                 header("location: event-list.php");
             } else {
                 echo "Oops! Quelque chose s'est mal passé. Veuillez réessayer plus tard.";
