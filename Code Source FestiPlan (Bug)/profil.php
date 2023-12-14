@@ -1,4 +1,4 @@
-<?php
+s<?php
 // Démarrer la session pour avoir accès aux variables de session
 session_start();
 // Inclure le fichier de configuration (contenant par exemple des paramètres de connexion à la base de données)
